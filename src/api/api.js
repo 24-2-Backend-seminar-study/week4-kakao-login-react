@@ -30,3 +30,16 @@ export const signUp = async (data) => {
   }
   return response;
 };
+
+export const kakaoSignIn = async () => {
+  const response = await instance.get("/account/kakao/signin/");
+  window.location.href = response.data;
+}
+
+export const kakaoCallBack = async (code) => {
+  const response = await instance.get(`/account/kakao/callback/?code=${code}`);
+  if (response.status === 200) {
+    console.log(response.data);
+    window.location.href = "/";
+  }
+}

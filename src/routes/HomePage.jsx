@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signIn, signUp } from "../api/api";
+import { signIn, signUp, kakaoSignIn } from "../api/api";
 
 const HomePage = () => {
   const [userData, setUserData] = useState({ username: "", password: "" });
@@ -52,7 +52,7 @@ const HomePage = () => {
       </form>
       <br></br>
       <h3>카카오 로그인</h3>
-      <button>카카오로 로그인하기</button>
+      <button onClick={kakaoSignIn}>카카오로 로그인하기</button>
       <br></br>
       <br></br>
       <h3>로그인 정보 확인하기</h3>
